@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live in magic world</title>
+   
+    <link rel="stylesheet" href="styles/style.css" />
+</head>
+<body>
+    
+<div class="container">
+    <div id="character">
+        <% if(locals.imgCha){%>
+            <img src="<%= imgCha %>">
+        <%}%>
+        <% if(locals.characterName){%>
+            <p>Your are <span><a href="<%= chaWiki %>"><%= characterName %></a></span>.</p>
+        <%}%>
+    </div>
+    <div id="spell">
+        <% if(locals.imgSpell){%>
+            <img src="<%= imgSpell %>">
+        <%}%>
+        
+        <% if(locals.spellName){%>
+            <p>You're gonna use <%= spellName %> on someone.</p>
+        <%}%>
+        <% if(locals.spellEffect){%>
+            <p><%=spellEffect  %></p>
+        <%}%>
+        
+    </div>
+   <div id="potion">
+        <% if(locals.imgPo){%>
+            <img src="<%= imgPo %>">
+        <%}%>
+        
+        <% if(locals.potionName){%>
+            <p>In your pocket there is a bottle of <%= potionName %>. Why do your bring it?</p>
+        <%}%>
+    </div>
+    
+    <div id="book/movie">
+        <% if(locals.imgMovie){%>
+            <img src="<%= imgMovie %>">
+        <%}%>
+        <% if(locals.movieName&&locals.bookName){%>
+            <p>At night, you will watch <%= movieName %> or read <%= bookName %>.</p>
+        <%}%>
+        
+    </div>
+    
+</div>
+     
+</body>
+</html>
