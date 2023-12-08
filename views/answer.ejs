@@ -1,0 +1,83 @@
+<%-include("partials/header.ejs") %>
+<div class="container" id="chosenName">
+    
+        <div class="card profile">
+          <% if(locals.imgCha){%>
+            <img id="character" src="<%= imgCha %>" alt="<%= characterName %>">
+        <%}%>  
+        </div>
+        
+       
+       <div class="card text">
+        <% if(locals.characterName){%>
+            <h3><%= characterName %></h3>
+        <%}%>
+        <% if(locals.Alias_names.length > 0){%>
+            Alias names: <ul>
+                <% Alias_names.forEach((item)=>{%>
+                   <li><%= item %></li>
+               <%}) %>
+           </ul>
+        <%}%> 
+        <% if(locals.Patronus){%>
+           
+            <p>Patronus: <%=Patronus  %></p>
+        <%}%>
+        <% if(locals.Animagus){%>
+           
+            <p>Animagus: <%=Animagus  %></p>
+        <%}%>
+        <% if(locals.Boggart){%>
+           
+            <p>Boggart: <%=Boggart  %></p> 
+        <%}%>    
+        <% if(locals.House){%>   
+            <P>House: <%=House %></P> 
+        <%}%>      
+        <% if(locals.Jobs.length > 0){%>
+            Jobs:<ul>
+                <% Jobs.forEach((item)=>{%>
+                   <li><%= item %></li>
+               <%}) %>
+           </ul>
+        <%}%>    
+        <% if(locals.Wands.length > 0){%>
+            Wands:<ul>
+                <% Wands.forEach((item)=>{%>
+                    <li><%= item %></li>
+                <%}) %>
+            </ul>
+        <%}%>     
+        <% if(locals.Eye_color){%>   
+            <p>Eye color: <%=Eye_color  %> </p>
+        <%}%>       
+        <% if(locals.Hair_color){%>   
+            <P>Hair color: <%=Hair_color  %></P>
+        <%}%>   
+            
+            <% if(locals.Family_members.length > 0){%>
+                Family members:<ul>
+                    <% Family_members.forEach((item)=>{%>
+                        <li><%= item %></li>
+                    <%}) %>
+                </ul>
+            <%}%>     
+            <% if(locals.Romances.length > 0){%>
+                Romances:<ul>
+                    <% Romances.forEach((item)=>{%>
+                        <li><%= item %></li>
+                    <%}) %>
+                </ul>
+            <%}%>             
+       </div>
+   
+ </div>
+    
+            
+            
+              
+
+
+            
+       
+     <%-include("partials/footer.ejs") %>

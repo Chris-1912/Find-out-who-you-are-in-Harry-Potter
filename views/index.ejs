@@ -1,57 +1,32 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Live in magic world</title>
-   
-    <link rel="stylesheet" href="styles/style.css" />
-</head>
-<body>
-    
-<div class="container">
-    <div id="character">
-        <% if(locals.imgCha){%>
-            <img src="<%= imgCha %>">
-        <%}%>
-        <% if(locals.characterName){%>
-            <p>Your are <span><a href="<%= chaWiki %>"><%= characterName %></a></span>.</p>
-        <%}%>
+<%-include("partials/header.ejs") %>
+<div class="container" id="homePage">
+  <div class="container-items">
+    <div id="headline">
+      <h2>Find your alias from <span id="title">  H a r r y P o t t e r.</span></h2>  
     </div>
-    <div id="spell">
-        <% if(locals.imgSpell){%>
-            <img src="<%= imgSpell %>">
-        <%}%>
-        
-        <% if(locals.spellName){%>
-            <p>You're gonna use <%= spellName %> on someone.</p>
-        <%}%>
-        <% if(locals.spellEffect){%>
-            <p><%=spellEffect  %></p>
-        <%}%>
-        
+
+    <div id="box">
+      <form id="nameInput" action="/answer" method="POST">
+      
+        <input type="name"   id="name" placeholder="Please enter your name">
+        <a  href="#" onclick="this.parentNode.submit()">
+            <img id="wand" src="/images/wand (1).png" alt="wand"/>
+        </a>
+      
+      </form> 
     </div>
-   <div id="potion">
-        <% if(locals.imgPo){%>
-            <img src="<%= imgPo %>">
-        <%}%>
-        
-        <% if(locals.potionName){%>
-            <p>In your pocket there is a bottle of <%= potionName %>. Why do your bring it?</p>
-        <%}%>
-    </div>
-    
-    <div id="book/movie">
-        <% if(locals.imgMovie){%>
-            <img src="<%= imgMovie %>">
-        <%}%>
-        <% if(locals.movieName&&locals.bookName){%>
-            <p>At night, you will watch <%= movieName %> or read <%= bookName %>.</p>
-        <%}%>
-        
-    </div>
-    
-</div>
      
-</body>
-</html>
+ </div>
+  
+</div>
+
+  
+  
+
+
+
+
+
+
+
+<%-include("partials/footer.ejs") %>
